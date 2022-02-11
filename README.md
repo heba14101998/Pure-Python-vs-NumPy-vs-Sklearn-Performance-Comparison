@@ -23,31 +23,31 @@ One of the most-used algorithms is gradient descent, which at a high level consi
 
 ## Create Dataset with Gaussian noise
 
-This program creates a set of 10,000 inputs x linearly distributed over the interval from 0 to 2. It then creates a set of desired outputs $y = 3 + 2 * x + \text{noise}$, where noise is taken from a Gaussian (normal) distribution with zero mean and standard deviation sigma = 0.1.
+This program creates a set of 10,000 inputs x linearly distributed over the interval from 0 to 2. It then creates a set of desired outputs y = 3 + 2 * x + noise, where noise is taken from a Gaussian (normal) distribution with zero mean and standard deviation sigma = 0.1.
 
-* $X$: A set of 10,000 inputs from 0 to 2.
-* $y = 3 + 2 * x + \text{noise}$
+* X: A set of 10,000 inputs from 0 to 2.
+* y = 3 + 2 * x + noise
 
 **Note**: 
 > The corrct values of the weights is 3 and 2.
 
 ## Model Using Pure Python
 
-With a step size of 0.001 and 10,000 epochs, we can get a fairly precise estimate of $w_0$ and $w_1$. Inside the for-loop, the gradients with respect to the parameters are calculated and used in turn to update the weights, moving in the opposite direction in order to minimize the MSE cost function.
+With a step size of 0.001 and 10,000 epochs, we can get a fairly precise estimate of w0 and w1. Inside the for-loop, the gradients with respect to the parameters are calculated and used in turn to update the weights, moving in the opposite direction in order to minimize the MSE cost function.
 
 At each epoch, after the update, the output of the model is calculated. The vector operations are performed using **list comprehensions**. We could have also updated y in-place, but that would not have been beneficial to performance.
 
-The elapsed time of the algorithm is measured using the time library. It takes $26.71$ seconds to estimate $w_0$ = 2.9657 and $w_1$ = 2.02859.
+The elapsed time of the algorithm is measured using the time library. It takes $26.71$ seconds to estimate w0 = 2.9657 and w1 = 2.02859.
 
 
 ## Model Using NumPy Library
 NumPy adds support for large multidimensional arrays and matrices along with a collection of mathematical functions to operate on them. I build a module called "MultipleLinearRegression" with the full implementation of linear regression algorithm using numpy.
 
-The elapsed time of the algorithm is measured using the time library. It takes $0.9065$ seconds to estimate $w_0 = 2.9727$ and $w_1 = 2.02263$. While the timeit library provide $0.88965$ seconds.
+The elapsed time of the algorithm is measured using the time library. It takes $0.9065$ seconds to estimate w0 = 2.9727 and w1 = 2.02263$. While the timeit library provide 0.88965 seconds.
 
 ## Model Using Scikit-lwarn library
 
-The elapsed time of the algorithm is measured using the time library. It takes $0.0009975433$ seconds to estimate $w_0 = 3.0015$ and $w_1 = 1.9982$. While the timeit library provide $0.00034485$ seconds.
+The elapsed time of the algorithm is measured using the time library. It takes $0.0009975433$ seconds to estimate w0 = 3.0015 and w1 = 1.9982. While the timeit library provide 0.00034485 seconds.
 
 
 <center style="font-size: 25px; background-color:lightskyblue;blue; font-family:Georgia">
